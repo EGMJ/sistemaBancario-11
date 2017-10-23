@@ -25,7 +25,8 @@ Route::get('movimiento/caja/{id_caja}', 'MovimientoController@caja')->name('movi
 Route::get('sucursal/caja/{id_sucursal}', 'CajaController@cajas')->name('sucursal.caja');
 Route::get('caja/detalle/{id_caja}', 'DetalleController@historico')->name('Detalle.caja');
 Route::get('cuenta/historico/{id_cuenta}', 'CuentaController@historico')->name('cuenta.historico');
-
+Route::get('cliente/reporte', 'ClienteController@reporteCreate');
+Route::post('cliente/reporte/ver', 'ClienteController@reporteStore')->name('cliente.reporteStore');
 
 Route::resource('banco', 'BancoController');
 Route::resource('banco', 'BancoController');

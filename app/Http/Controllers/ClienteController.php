@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Banco;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Cliente;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Session;
 
@@ -48,6 +50,11 @@ class ClienteController extends Controller
     {
         return view('cliente.create');
     }
+    public function reporteCreate()
+    {
+        $bancos = Banco::all()->pluck('razon_social','id');
+        return view('cliente.menuReporte',compact('bancos'));
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -76,6 +83,38 @@ class ClienteController extends Controller
         Session::flash('flash_message', 'Cliente added!');
 
         return redirect('cliente');
+    }
+    public function reporteStore(Request $request){
+
+
+        //return$request->all();
+        $clientes='sjdhfkajshvkjs';
+        if ($request->selecBanco==null and $request->selectGenero==3){
+            $clientes=Cliente::join('bancos as b','b.id','id_banco')->get();
+        }elseif ($request->selecBanco!=null and $request->selectGenero==3){
+            $clientes=Cliente::join('bancos as b','b.id','id_banco')->where('id_banco',$request->selecBanco)->get();
+        }elseif ($request->selecBanco==null and $request->selectGenero!=3){
+            $clientes=Cliente::join('bancos as b','b.id','id_banco')->where('genero',$request->selectGenero)->get();
+        }
+        elseif ($request->selecBanco!=null and $request->selectGenero!=3){
+            $clientes=Cliente::join('bancos as b','b.id','id_banco')->where('id_banco',$request->selecBanco)->where('genero',$request->selectGenero)->get();
+        }
+
+        $validacion=$request->all();
+        //return $validacion;
+        $hola=1;
+        $nombre=$request->nombre;
+        $paterno=$request->paterno;
+        $materno=$request->materno;
+        $ci=$request->ci;
+        $fecha_nacimiento=$request->fecha_nacimiento;
+        $genero=$request->genero;
+        $telefono=$request->telefono;
+        $correo=$request->correo;
+        $banco=$request->banco;
+        $pdf = \PDF::loadview('cliente.pdfCliente',compact('clientes','nombre','paterno','materno','ci','fecha_nacimiento','genero','telefono','correo','banco'));
+        return $pdf->stream('cliente '.Carbon::now().'.pdf');
+
     }
 
     /**
