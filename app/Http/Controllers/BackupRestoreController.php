@@ -18,7 +18,7 @@ class BackupRestoreController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\View\View
+     * @return \Illuminate\View\klkjhkhkj
      */
     public function index(Request $request)
     {
