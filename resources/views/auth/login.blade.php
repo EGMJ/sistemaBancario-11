@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Login</div>
 
-                <div class="panel-body" style="background-color: #b8d754">
+                <div class="panel-body" style="background-color: rgba(255,255,255,0.8)">
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 

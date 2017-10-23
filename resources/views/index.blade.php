@@ -8,7 +8,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ServiGAS</title>
+	<title>Financiero</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Website Template by freshdesignweb.com" />
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
@@ -62,7 +62,7 @@
 		<div class="ubea-container">
 			<div class="row">
 				<div class="col-sm-2 col-xs-12">
-					<div id="ubea-logo"><a href="{{url('/')}}">MultiBanco<em>.</em></a></div>
+					<div id="ubea-logo"><a href="{{url('/')}}">Financiero<em>.</em></a></div>
 				</div>
 				<div class="col-xs-10 text-right menu-1 ">
 					<ul>
