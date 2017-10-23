@@ -13,6 +13,7 @@ use Session;
 
 class ConsultasWSController extends Controller
 {
+    //
 
     public function login($correo)
     {
