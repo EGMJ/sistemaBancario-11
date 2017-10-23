@@ -12,8 +12,10 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+
 </head>
-<body style="background-color: #ffffff">
+<body background="img/images.jfif">
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top" style="background-color: #404e67;color: white">
             <div class="container" >
