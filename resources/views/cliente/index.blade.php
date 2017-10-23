@@ -12,7 +12,9 @@
                         <a href="{{ url('/cliente/create') }}" class="btn btn-success btn-sm" title="Add New Cliente">
                             <i class="fa fa-plus" aria-hidden="true"></i> Add New
                         </a>
-
+                        <a href="{{ url('/cliente/reporte') }}" class="btn btn-danger btn-sm" title="Generar Reporte">
+                            <i class="fa fa-file-pdf-o" aria-hidden="true"></i> Reporte
+                        </a>
                         {!! Form::open(['method' => 'GET', 'url' => '/cliente', 'class' => 'navbar-form navbar-right', 'role' => 'search'])  !!}
                         <div class="input-group">
                             <input type="text" class="form-control" name="search" placeholder="Search...">
@@ -26,6 +28,8 @@
 
                         <br/>
                         <br/>
+                        <br>
+
                         <div class="table-responsive">
                             <table class="table table-borderless">
                                 <thead>

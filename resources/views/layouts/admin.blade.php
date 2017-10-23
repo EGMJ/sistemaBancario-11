@@ -255,6 +255,18 @@
                     <ul class="menu-content">
                         <li><a href={{url('/rol')}}><i class="fa fa-ravelry"></i>Roles</a>
                         </li>
+
+                        <li><a href={{url('/caso-uso')}}><i class="fa fa-ravelry"></i>Permisos</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class=" nav-item"><a href="#"><i class="fa fa-plug"></i><span data-i18n="" class="menu-title">Modulos y Funcionalidades</span></a>
+                    <ul class="menu-content">
+                        <li><a href={{url('/modulo')}}><i class="fa fa-ravelry"></i>Modulos</a>
+                        </li>
+                        <li><a href={{url('/menu')}}><i class="fa fa-ravelry"></i>Funciones</a>
+                        </li>
                     </ul>
                 </li>
       </div>
