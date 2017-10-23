@@ -32,7 +32,10 @@
                                     <tr>
                                         <th>ID</th><td>{{ $backuprestore->id }}</td>
                                     </tr>
-                                    <tr><th> Nombre </th><td> {{ $backuprestore->nombre }} </td></tr><tr><th> Ruta </th><td> {{ $backuprestore->ruta }} </td></tr><tr><th> Fecha </th><td> {{ $backuprestore->fecha }} </td></tr>
+                                    <tr><th> Nombre </th><td> {{ $backuprestore->nombre }} </td></tr>
+                                    <tr><th> Ruta </th><td> {{ $backuprestore->ruta }} </td></tr>
+                                    <tr><th> Fecha </th><td> {{ $backuprestore->fecha }} </td></tr>
+                                    <tr><th> Creado por </th><td> {{ $backuprestore->name }} </td></tr>
                                 </tbody>
                             </table>
                         </div>

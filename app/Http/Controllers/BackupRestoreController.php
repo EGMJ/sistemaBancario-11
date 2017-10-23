@@ -92,7 +92,13 @@ class BackupRestoreController extends Controller
      */
     public function show($id)
     {
-        $backuprestore = BackupRestore::findOrFail($id);
+        $backuprestore = DB::table('backup_restores as b')
+            ->join('users as u', 'b.id_usuario', 'u.id')
+            ->where('b.id', $id)
+            ->get();
+
+        $backuprestore = $backuprestore->toArray();
+        $backuprestore = $backuprestore[0];
 
         return view('backup-restore.show', compact('backuprestore'));
     }
