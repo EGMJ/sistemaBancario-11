@@ -250,7 +250,13 @@
 
                 <li><a href={{url('/backup-restore')}}><i class="fa fa-database"></i>Copia & Restauracion</a></li>
 
-                <li><a href={{url('/rol')}}><i class="fa fa-user"></i>Roles & Permisos</a></li>
+
+                <li class=" nav-item"><a href="#"><i class="fa fa-user"></i><span data-i18n="" class="menu-title">Roles & Permisos</span></a>
+                    <ul class="menu-content">
+                        <li><a href={{url('/rol')}}><i class="fa fa-ravelry"></i>Roles</a>
+                        </li>
+                    </ul>
+                </li>
       </div>
     </div>
     <div class="content-body">

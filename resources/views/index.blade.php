@@ -62,7 +62,7 @@
 		<div class="ubea-container">
 			<div class="row">
 				<div class="col-sm-2 col-xs-12">
-					<div id="ubea-logo"><a href="{{url('/')}}">Financiero<em>.</em></a></div>
+					<div id="ubea-logo"><a href="{{url('/')}}">MultiBanco<em>.</em></a></div>
 				</div>
 				<div class="col-xs-10 text-right menu-1 ">
 					<ul>
