@@ -1,0 +1,56 @@
+{
+  "fields": [
+    {
+      "name": "fecha",
+      "type": "datetime"
+    },
+    {
+      "name": "id_cuenta",
+      "type": "integer#unsigned"
+    },
+    {
+      "name": "monto",
+      "type": "double"
+    },
+     {
+      "name": "saldo",
+      "type": "double"
+    },
+     {
+      "name": "detalle",
+      "type": "string"
+    }
+
+  ],
+  "foreign_keys": [
+    {
+      "column": "id_cuenta",
+      "references": "id",
+      "on": "cuentas",
+      "onDelete": "cascade",
+       "onUpdate": "cascade"
+    }
+  ],
+  "validations": [
+    {
+      "field": "fecha",
+      "rules": "required"
+    },
+    {
+      "field": "id_cuenta",
+      "rules": "required"
+    },
+    {
+      "field": "monto",
+      "rules": "required"
+    },
+    {
+      "field": "saldo",
+      "rules": "required"
+    },
+     {
+      "field": "detalle",
+      "rules": "required"
+    }
+  ]
+}

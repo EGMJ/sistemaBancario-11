@@ -1,0 +1,48 @@
+{
+  "fields": [
+    {
+      "name": "tipo",
+      "type": "string"
+    },
+    {
+      "name": "id_sucursal",
+      "type": "integer#unsigned"
+    },
+    {
+      "name": "id_banco",
+      "type": "integer#unsigned"
+    },
+    {
+      "name": "total",
+      "type": "double"
+    }
+
+  ],
+  "foreign_keys": [
+    {
+      "column": "id_sucursal",
+      "references": "id",
+      "on": "sucursals",
+      "onDelete": "cascade",
+       "onUpdate": "cascade"
+    }
+  ],
+  "validations": [
+    {
+      "field": "tipo",
+      "rules": "required"
+    },
+    {
+      "field": "id_sucursal",
+      "rules": "required"
+    },
+    {
+      "field": "total",
+      "rules": "required"
+    },
+     {
+      "field": "id_banco",
+      "rules": "required"
+    }
+  ]
+}

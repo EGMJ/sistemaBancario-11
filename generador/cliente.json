@@ -1,0 +1,91 @@
+{
+  "fields": [
+    {
+      "name": "nombre",
+      "type": "string"
+    },
+    {
+      "name": "paterno",
+      "type": "string"
+    },
+    {
+      "name": "materno",
+      "type": "string"
+     
+    },{
+      "name": "ci",
+      "type": "string"
+    },
+    {
+      "name": "fecha_nacimiento",
+      "type": "date"
+    },
+    {
+      "name": "genero",
+      "type": "select",
+       "options": ["MASCULINO", "FEMENINO", "NO DEFINIDO"]
+    },
+    {
+       "name": "correo",
+      "type": "string"
+     
+    },
+    {
+       "name": "telefono",
+      "type": "integer"
+     
+    },
+     {
+       "name": "id_banco",
+      "type": "integer#unsigned"
+     
+    }
+  ],
+  "foreign_keys": [
+    {
+      "column": "id_banco",
+      "references": "id",
+      "on": "bancos",
+      "onDelete": "cascade",
+      "onUpdate": "cascade"
+    }
+  ],
+  "validations": [
+    {
+      "field": "nombre",
+      "rules": "required"
+    },
+      {
+      "field": "paterno",
+      "rules": "required"
+    },
+    {
+      "field": "materno",
+      "rules": "required"
+    },
+    {
+      "field": "ci",
+      "rules": "required"
+    },
+    {
+      "field": "fecha_nacimiento",
+      "rules": "required"
+    },
+      {
+      "field": "genero",
+      "rules": "required"
+    },
+      {
+      "field": "correo",
+      "rules": "required"
+    },
+      {
+      "field": "telefono",
+      "rules": "required"
+    },
+      {
+      "field": "id_banco",
+      "rules": "required"
+    }
+  ]
+}

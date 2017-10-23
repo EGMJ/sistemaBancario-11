@@ -1,0 +1,45 @@
+{
+  "fields": [
+    {
+      "name": "razonsocial",
+      "type": "date"
+    },
+    {
+      "name": "sigla",
+      "type": "number"
+    },
+    {
+      "name": "web",
+      "type": "number"
+    },
+    {
+      "name": "logo",
+      "type": "number"
+    },
+    {
+      "name": "moneda_base",
+      "type": "number"
+    }
+  ],
+  "foreign_keys": [
+    {
+      "column": "moneda_base",
+      "references": "id",
+      "on": "monedas"
+    }
+  ],
+  "validations": [
+    {
+      "field": "fecha",
+      "rules": "required"
+    },
+     {
+      "field": "valor",
+      "rules": "required"
+    },
+    {
+      "field": "moneda_id",
+      "rules": "required"
+    }
+  ]
+}

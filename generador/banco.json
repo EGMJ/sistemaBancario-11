@@ -1,0 +1,22 @@
+{
+  "fields": [
+    {
+      "name": "razon_social",
+      "type": "string"
+    },
+    {
+      "name": "nit",
+      "type": "integer"
+    }
+  ],
+  "validations": [
+    {
+      "field": "razon_social",
+      "rules": "required"
+    },
+     {
+      "field": "nit",
+      "rules": "required"
+    }
+  ]
+}

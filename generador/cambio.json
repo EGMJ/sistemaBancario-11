@@ -1,0 +1,37 @@
+{
+  "fields": [
+    {
+      "name": "fecha",
+      "type": "date"
+    },
+    {
+      "name": "valor",
+      "type": "number"
+    },
+    {
+      "name": "id_moneda",
+      "type": "number"
+    }
+  ],
+  "foreign_keys": [
+    {
+      "column": "id_moneda",
+      "references": "id",
+      "on": "monedas"
+    }
+  ],
+  "validations": [
+    {
+      "field": "fecha",
+      "rules": "required"
+    },
+     {
+      "field": "valor",
+      "rules": "required"
+    },
+    {
+      "field": "moneda_id",
+      "rules": "required"
+    }
+  ]
+}

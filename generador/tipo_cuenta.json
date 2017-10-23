@@ -1,0 +1,27 @@
+{
+  "fields": [
+    {
+      "name": "nombre",
+      "type": "string"
+    },
+    {
+      "name": "interes",
+      "type": "double"
+    },
+    {
+       "name": "id_banco",
+      "type": "integer#unsigned"
+     
+    }
+  ],
+  "validations": [
+    {
+      "field": "nombre",
+      "rules": "required"
+    },
+      {
+      "field": "interes",
+      "rules": "required"
+    }
+  ]
+}

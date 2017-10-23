@@ -1,0 +1,28 @@
+{
+  "fields": [
+    {
+      "name": "id_banco",
+      "type": "number"
+    },
+    {
+      "name": "id_modulo",
+      "type": "number"
+    }
+  ],
+  "foreign_keys": [
+    {
+      "column": "id_banco",
+      "references": "id",
+      "on": "bancos",
+      "onDelete": "cascade",
+      "onUpdate": "cascade"
+    },
+    {
+      "column": "id_modulo",
+      "references": "id",
+      "on": "modulos",
+      "onDelete": "cascade",
+      "onUpdate": "cascade"
+    }
+  ]
+}

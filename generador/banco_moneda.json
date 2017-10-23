@@ -1,0 +1,34 @@
+{
+  "fields": [
+    {
+      "name": "id_moneda",
+      "type": "number"
+    },
+    {
+      "name": "id_banco",
+      "type": "number"
+    }
+  ],
+  "foreign_keys": [
+    {
+      "column": "id_moneda",
+      "references": "id",
+      "on": "monedas"
+    },
+    {
+      "column": "id_banco",
+      "references": "id",
+      "on": "bancos"
+    }
+  ],
+  "validations": [
+    {
+      "field": "id_moneda",
+      "rules": "required"
+    },
+     {
+      "field": "id_banco",
+      "rules": "required"
+    }
+  ]
+}

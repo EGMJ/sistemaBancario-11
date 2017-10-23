@@ -1,0 +1,70 @@
+{
+  "fields": [
+    {
+      "name": "ci",
+      "type": "string"
+    },
+    {
+      "name": "nombre",
+      "type": "string"
+    },
+    {
+      "name": "paterno",
+      "type": "string"
+    },
+    {
+      "name": "materno",
+      "type": "string"
+    },
+    {
+      "name": "genero",
+      "type": "string"
+    },
+    {
+      "name": "nick",
+      "type": "string"
+    },
+    {
+      "name": "correo",
+      "type": "email"
+    },
+    {
+      "name": "password",
+      "type": "password"
+    }
+  ],
+  "validations": [
+    {
+      "field": "ci",
+      "rules": "required"
+    },
+    {
+      "field": "nombre",
+      "rules": "required"
+    },
+    {
+      "field": "paterno",
+      "rules": "required"
+    },
+    {
+      "field": "materno",
+      "rules": "required"
+    },
+    {
+      "field": "genero",
+      "rules": "required"
+    },
+    {
+      "field": "nick",
+      "rules": "required"
+    },
+    {
+      "field": "correo",
+      "rules": "required"
+    },
+    {
+      "field": "password",
+      "rules": "required"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "fields": [
+    {
+      "name": "cod",
+      "type": "string"
+    },
+    {
+      "name": "nombre",
+      "type": "string"
+    },
+    {
+      "name": "descripcion",
+      "type": "string"
+    }
+  ],
+  "validations": [
+    {
+      "field": "cod",
+      "rules": "required"
+    },
+    {
+      "field": "nombre",
+      "rules": "required"
+    },
+    {
+      "field": "descripcion",
+      "rules": "required"
+    }
+  ]
+}

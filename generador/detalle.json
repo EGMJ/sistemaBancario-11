@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "fecha",
+      "type": "date"
+    },
+    {
+      "name": "id_caja",
+      "type": "integer#unsigned"
+    },
+    {
+      "name": "monto",
+      "type": "double"
+    },
+     {
+      "name": "id_banco",
+      "type": "integer#unsigned"
+    },
+     {
+      "name": "detalle",
+      "type": "string"
+    }
+
+  ],
+  "foreign_keys": [
+    {
+      "column": "id_caja",
+      "references": "id",
+      "on": "cajas",
+      "onDelete": "cascade",
+       "onUpdate": "cascade"
+    }
+  ],
+  "validations": [
+    {
+      "field": "fecha",
+      "rules": "required"
+    },
+    {
+      "field": "id_caja",
+      "rules": "required"
+    },
+    {
+      "field": "detalle",
+      "rules": "required"
+    },
+     {
+      "field": "id_banco",
+      "rules": "required"
+    }
+  ]
+}

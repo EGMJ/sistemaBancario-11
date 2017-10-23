@@ -1,0 +1,30 @@
+{
+  "fields": [
+    {
+      "name": "nombre",
+      "type": "string"
+    },
+    {
+      "name": "descripcion",
+      "type": "string"
+    },
+    {
+      "name": "abreviatura",
+      "type": "string"
+    }
+  ],
+  "validations": [
+    {
+      "field": "nombre",
+      "rules": "required"
+    },
+     {
+      "field": "descripcion",
+      "rules": "required"
+    },
+    {
+      "field": "abreviatura",
+      "rules": "required"
+    }
+  ]
+}

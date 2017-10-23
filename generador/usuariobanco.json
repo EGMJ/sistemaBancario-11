@@ -1,0 +1,69 @@
+{
+  "fields": [
+    {
+      "name": "color",
+      "type": "string"
+    },
+    {
+      "name": "font_family",
+      "type": "string"
+    },
+    {
+      "name": "font_size",
+      "type": "string"
+    },
+    {
+      "name": "id_usuario",
+      "type": "string"
+    },
+    {
+      "name": "id_banco",
+      "type": "string"
+    },
+    {
+      "name": "id_rol",
+      "type": "string"
+    }
+  ],
+  "foreign_keys": [
+    {
+      "column": "id_usuario",
+      "references": "id",
+      "on": "rols",
+      "onDelete": "cascade",
+      "onUpdate": "cascade"
+    },
+    {
+      "column": "id_banco",
+      "references": "id",
+      "on": "bancos",
+      "onDelete": "cascade",
+      "onUpdate": "cascade"
+    },
+    {
+      "column": "id_rol",
+      "references": "id",
+      "on": "rols",
+      "onDelete": "cascade",
+      "onUpdate": "cascade"
+    }
+  ],
+  "validations": [
+    {
+      "field": "cod",
+      "rules": "required"
+    },
+    {
+      "field": "nombre",
+      "rules": "required"
+    },
+    {
+      "field": "descripcion",
+      "rules": "required"
+    },
+    {
+      "field": "id_menu",
+      "rules": "required"
+    }
+  ]
+}

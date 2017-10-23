@@ -1,0 +1,38 @@
+{
+  "fields": [
+    {
+      "name": "id_rol",
+      "type": "number"
+    },
+    {
+      "name": "id_casouso",
+      "type": "number"
+    }
+  ],
+  "foreign_keys": [
+    {
+      "column": "id_rol",
+      "references": "id",
+      "on": "rols",
+      "onDelete": "cascade",
+      "onUpdate": "cascade"
+    },
+    {
+      "column": "id_casouso",
+      "references": "id",
+      "on": "caso_usos",
+      "onDelete": "cascade",
+      "onUpdate": "cascade"
+    }
+  ],
+  "validations": [
+    {
+      "field": "id_rol",
+      "rules": "required"
+    },
+    {
+      "field": "id_casouso",
+      "rules": "required"
+    }
+  ]
+}

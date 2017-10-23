@@ -1,0 +1,59 @@
+{
+  "fields": [
+    {
+      "name": "fecha",
+      "type": "date"
+    },
+    {
+      "name": "monto",
+      "type": "double"
+    },
+     {
+      "name": "id_banco",
+      "type": "integer#unsigned"
+    },
+     {
+      "name": "id_cuenta",
+      "type": "integer#unsigned"
+    },
+    {
+      "name": "id_cuenta_destino",
+      "type": "integer#unsigned"
+    }
+
+  ],
+  "foreign_keys": [
+    {
+      "column": "id_cuenta",
+      "references": "id",
+      "on": "cuentas",
+      "onDelete": "cascade",
+       "onUpdate": "cascade"
+    },
+    {
+      "column": "id_cuenta_destino",
+      "references": "id",
+      "on": "cuentas",
+      "onDelete": "cascade",
+      "onUpdate": "cascade"
+    }
+  ],
+  "validations": [
+    {
+      "field": "fecha",
+      "rules": "required"
+    },
+    {
+      "field": "monto",
+      "rules": "required"
+    },
+    {
+      "field": "id_cuenta_destino",
+      "rules": "required"
+    },
+    {
+      "field": "id_cuenta",
+      "rules": "required"
+    }
+  ]
+}

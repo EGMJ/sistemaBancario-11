@@ -1,0 +1,62 @@
+{
+  "fields": [
+    {
+      "name": "nombre",
+      "type": "string"
+    },
+    {
+      "name": "ruta",
+      "type": "string"
+    },
+    {
+      "name": "fecha",
+      "type": "datetime"
+    },
+    {
+      "name": "id_usuario",
+      "type": "integer#unsigned"
+    },
+    {
+      "name": "id_banco",
+      "type": "integer#unsigned"
+    }
+  ],
+  "foreign_keys": [
+    {
+      "column": "id_usuario",
+      "references": "id",
+      "on": "usuarios",
+      "onDelete": "cascade",
+      "onUpdate": "cascade"
+    },
+    {
+      "column": "id_banco",
+      "references": "id",
+      "on": "bancos",
+      "onDelete": "cascade",
+      "onUpdate": "cascade"
+    }
+  ],
+  "validations": [
+    {
+      "field": "nombre",
+      "rules": "required"
+    },
+    {
+      "field": "ruta",
+      "rules": "required"
+    },
+    {
+      "field": "fecha",
+      "rules": "required"
+    },
+    {
+      "field": "id_usuario",
+      "rules": "required"
+    },
+    {
+      "field": "id_banco",
+      "rules": "required"
+    }
+  ]
+}

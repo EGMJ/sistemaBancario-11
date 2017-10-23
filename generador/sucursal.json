@@ -1,0 +1,56 @@
+{
+  "fields": [
+    {
+      "name": "nombre",
+      "type": "string"
+    },
+    {
+      "name": "id_banco",
+      "type": "integer#unsigned"
+    },
+    {
+      "name": "departamento",
+      "type": "string"
+    },
+    {
+      "name": "telefono",
+      "type": "integer"
+    },
+    {
+      "name": "direccion",
+      "type": "string"
+    }
+
+  ],
+  "foreign_keys": [
+    {
+      "column": "id_banco",
+      "references": "id",
+      "on": "bancos",
+      "onDelete": "cascade",
+       "onUpdate": "cascade"
+    }
+  ],
+  "validations": [
+    {
+      "field": "nombre",
+      "rules": "required"
+    },
+    {
+      "field": "id_banco",
+      "rules": "required"
+    },
+    {
+      "field": "departamento",
+      "rules": "required"
+    },
+    {
+      "field": "telefono",
+      "rules": "required"
+    },
+    {
+      "field": "direccion",
+      "rules": "required"
+    }
+  ]
+}

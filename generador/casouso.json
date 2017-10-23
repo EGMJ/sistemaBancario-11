@@ -1,0 +1,47 @@
+{
+  "fields": [
+    {
+      "name": "cod",
+      "type": "string"
+    },
+    {
+      "name": "nombre",
+      "type": "string"
+    },
+    {
+      "name": "descripcion",
+      "type": "string"
+    },
+    {
+      "name": "id_menu",
+      "type": "string"
+    }
+  ],
+  "foreign_keys": [
+    {
+      "column": "id_menu",
+      "references": "id",
+      "on": "menus",
+      "onDelete": "cascade",
+      "onUpdate": "cascade"
+    }
+  ],
+  "validations": [
+    {
+      "field": "cod",
+      "rules": "required"
+    },
+    {
+      "field": "nombre",
+      "rules": "required"
+    },
+    {
+      "field": "descripcion",
+      "rules": "required"
+    },
+    {
+      "field": "id_menu",
+      "rules": "required"
+    }
+  ]
+}
