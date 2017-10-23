@@ -62,3 +62,11 @@ Route::resource('rol-cu', 'RolCuController');
 Route::resource('banco-modulo', 'BancoModuloController');
 Route::resource('backup-restore', 'BackupRestoreController');
 Route::get('/pdf', 'PDFcontroller@pdf');
+
+
+//rutas Web Services Android
+Route::get('login/{correo}', 'ConsultasWSController@login');
+Route::get('datos/{correo}', 'ConsultasWSController@datos');
+Route::get('historia/{correo}', 'ConsultasWSController@historia');
+
+
