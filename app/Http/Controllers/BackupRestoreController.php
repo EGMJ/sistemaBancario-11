@@ -147,10 +147,8 @@ class BackupRestoreController extends Controller
      */
     public function destroy($id)
     {
-        BackupRestore::destroy($id);
-
-        Session::flash('flash_message', 'BackupRestore deleted!');
-
-        return redirect('backup-restore');
+        $backup = BackupRestore::findOrFail($id);
+        $ruta = join(DIRECTORY_SEPARATOR, [public_path(''), $backup->ruta, $backup->nombre]);
+        return response()->download($ruta);
     }
 }

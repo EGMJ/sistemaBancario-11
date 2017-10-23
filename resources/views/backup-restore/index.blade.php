@@ -46,11 +46,10 @@
                                                 'url' => ['/backup-restore', $item->id],
                                                 'style' => 'display:inline'
                                             ]) !!}
-                                                {!! Form::button('<i class="fa fa-trash-o" aria-hidden="true"></i> Delete', array(
+                                                {!! Form::button('<i class="fa fa-download" aria-hidden="true"></i> Descargar', array(
                                                         'type' => 'submit',
-                                                        'class' => 'btn btn-danger btn-xs',
-                                                        'title' => 'Delete BackupRestore',
-                                                        'onclick'=>'return confirm("Confirm delete?")'
+                                                        'class' => 'btn btn-default btn-xs',
+                                                        'title' => 'Descargar Backup'
                                                 )) !!}
                                             {!! Form::close() !!}
                                         </td>
