@@ -66,8 +66,11 @@ Route::get('/pdf', 'PDFcontroller@pdf');
 
 
 //rutas Web Services Android
+Route::get('saldo/{correo}', 'ConsultasWSController@saldo');
 Route::get('login/{correo}', 'ConsultasWSController@login');
 Route::get('datos/{correo}', 'ConsultasWSController@datos');
 Route::get('historia/{correo}', 'ConsultasWSController@historia');
+Route::get('transaccion/{banco}/{fecha}/{monto}/{cuentaO}/{cuentaD}', 'ConsultasWSController@transaccion');
+
 
 
