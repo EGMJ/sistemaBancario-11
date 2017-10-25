@@ -103,9 +103,6 @@ class ClienteController extends Controller
             $clientes=Cliente::join('bancos as b','b.id','id_banco')->where('id_banco',$request->selecBanco)->where('genero',$request->selectGenero)->get();
         }
 
-        $validacion=$request->all();
-        //return $validacion;
-        $hola=1;
         $nombre=$request->nombre;
         $paterno=$request->paterno;
         $materno=$request->materno;
