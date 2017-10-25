@@ -55,8 +55,19 @@ class Cliente extends Model
            ->join('cuentas', 'clientes.id', '=', 'id_cliente')
            ->join('historicos','historicos.id_cuenta', 'cuentas.id')
             ->where('clientes.correo', $correo)
-            ->select('monto as monto','tipo as tipo','moneda as moneda')
+            ->select('monto as monto','tipo as tipo','moneda as moneda','detalle as detalle','fecha as fecha')
             ->get();
+        return $datos;
+    }
+    public function scope_saldo($query, $correo)
+    {
+        $datos = $query
+            ->join('cuentas', 'clientes.id', '=', 'id_cliente')
+            ->join('historicos','historicos.id_cuenta', 'cuentas.id')
+            ->where('clientes.correo', $correo)
+            ->select('historicos.saldo as saldo','moneda as moneda')
+
+            ->get()->last();
         return $datos;
     }
 

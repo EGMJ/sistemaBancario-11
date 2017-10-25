@@ -69,5 +69,7 @@ Route::get('/pdf', 'PDFcontroller@pdf');
 Route::get('login/{correo}', 'ConsultasWSController@login');
 Route::get('datos/{correo}', 'ConsultasWSController@datos');
 Route::get('historia/{correo}', 'ConsultasWSController@historia');
+Route::get('saldo/{correo}', 'ConsultasWSController@saldo');
+Route::get('transaccion/{banco}/{fecha}/{monto}/{cuentaO}/{cuentaD}', 'ConsultasWSController@transaccion');
 
 
