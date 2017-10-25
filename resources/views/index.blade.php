@@ -66,6 +66,7 @@
 				</div>
 				<div class="col-xs-10 text-right menu-1 ">
 					<ul>
+
 						<a href="{{ url('/login') }}">Login</a>
 						<a href="{{ url('/register') }}">Register</a>
 					</ul>
