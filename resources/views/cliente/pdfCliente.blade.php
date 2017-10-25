@@ -1,22 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
+<html><head>
     <meta charset="UTF-8">
     <title>Lista de Clientes</title>
     {!!Html::style('css/myStyle.css')!!}
-</head>
-<style type="text/css">
-    .table-and {
-        width: 100%;
-        border-collapse: collapse;
-    }
-    .th-and, .td-and {
-        border: 1px solid black;
-        padding: 4px;
-        text-align: left;
-    }
-</style>
-<body>
+</head><body>
 <a class="image featured"><img src="images/cavezera1.png" style="width: 100%  "/></a>
 
 <h1 id="cabeza">Lista de Clientes</h1>
@@ -90,5 +77,4 @@
             Fecha de Impresion {{\Carbon\Carbon::now()}}
     </table>
 </div>
-</body>
-</html>
+</body></html>

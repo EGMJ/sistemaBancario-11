@@ -10,6 +10,7 @@
                     <div class="panel-heading">Menu de Reporte Cliente</div>
                     <div class="panel-body">
                         <a href="{{ url('/cliente') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
+                        <a href="{{ url('/excel/') }}" title="Back"><button class="btn btn-blue btn-xs"><i class="fa-file-excel-o" aria-hidden="true"></i> Excel</button></a>
                         <br />
                         <br />
 

@@ -28,6 +28,7 @@ Route::get('cuenta/historico/{id_cuenta}', 'CuentaController@historico')->name('
 Route::get('cliente/reporte', 'ClienteController@reporteCreate');
 Route::post('cliente/reporte/ver', 'ClienteController@reporteStore')->name('cliente.reporteStore');
 
+
 Route::resource('banco', 'BancoController');
 Route::resource('banco', 'BancoController');
 Route::resource('cliente', 'ClienteController');
@@ -62,6 +63,7 @@ Route::resource('banco-modulo', 'BancoModuloController');
 Route::resource('backup-restore', 'BackupRestoreController');
 Route::resource('bitacora', 'BitacoraController');
 Route::get('/pdf', 'PDFcontroller@pdf');
+Route::get('/excel', 'ExcelCntroller@excel');
 
 
 //rutas Web Services Android
