@@ -35,5 +35,40 @@ class Cliente extends Model
         );
         return $clientes;
     }
-    
+
+    public function scope_login($query, $correo)
+    {
+        $contra = $query->where('correo', $correo)
+            ->select('correo as correo', 'ci as password', 'nombre as nombre')->get();
+        return $contra;
+    }
+
+    public function scope_datos($query, $correo)
+    {
+        $datos = $query->where('correo', $correo)->get();
+        return $datos;
+    }
+
+    public function scope_transacciones($query, $correo)
+    {
+        $datos = $query
+           ->join('cuentas', 'clientes.id', '=', 'id_cliente')
+           ->join('historicos','historicos.id_cuenta', 'cuentas.id')
+            ->where('clientes.correo', $correo)
+            ->select('monto as monto','tipo as tipo','moneda as moneda','detalle as detalle','fecha as fecha')
+            ->get();
+        return $datos;
+    }
+    public function scope_saldo($query, $correo)
+    {
+        $datos = $query
+            ->join('cuentas', 'clientes.id', '=', 'id_cliente')
+            ->join('historicos','historicos.id_cuenta', 'cuentas.id')
+            ->where('clientes.correo', $correo)
+            ->select('historicos.saldo as saldo','moneda as moneda')
+
+            ->get()->last();
+        return $datos;
+    }
+
 }

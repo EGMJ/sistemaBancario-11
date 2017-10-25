@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Cliente;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Session;
 
 class ClienteController extends Controller
@@ -81,6 +82,8 @@ class ClienteController extends Controller
         Cliente::create($requestData);
 
         Session::flash('flash_message', 'Cliente added!');
+
+        BitacoraController::guardar('Cliente->Cliente guardado', Auth::user()->name, Auth::user()->id_banco);
 
         return redirect('cliente');
     }

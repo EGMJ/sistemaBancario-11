@@ -17,10 +17,10 @@ class CreateClientesTable extends Migration
             $table->string('nombre');
             $table->string('paterno');
             $table->string('materno');
-            $table->string('ci');
+            $table->string('ci')->unique();
             $table->date('fecha_nacimiento');
             $table->string('genero');
-            $table->string('correo');
+            $table->string('correo')->correo();
             $table->integer('telefono');
             $table->integer('id_banco')->unsigned();
             $table->foreign('id_banco')->references('id')->on('bancos')->onDelete('cascade')->onUpdate('cascade');

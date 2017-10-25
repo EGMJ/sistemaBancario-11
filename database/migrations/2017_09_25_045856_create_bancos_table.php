@@ -15,7 +15,8 @@ class CreateBancosTable extends Migration
         Schema::create('bancos', function(Blueprint $table) {
             $table->increments('id');
             $table->string('razon_social');
-            $table->integer('nit');
+            $table->integer('nit')->unique();
+            $table->string('log')->nullable()->unique();
             $table->timestamps();
         });
     }
