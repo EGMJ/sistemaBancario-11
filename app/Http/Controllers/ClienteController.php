@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Cliente;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Session;
 
 class ClienteController extends Controller
@@ -82,6 +83,8 @@ class ClienteController extends Controller
 
         Session::flash('flash_message', 'Cliente added!');
 
+        BitacoraController::guardar('Cliente->Cliente guardado', Auth::user()->name, Auth::user()->id_banco);
+
         return redirect('cliente');
     }
     public function reporteStore(Request $request){
@@ -100,9 +103,6 @@ class ClienteController extends Controller
             $clientes=Cliente::join('bancos as b','b.id','id_banco')->where('id_banco',$request->selecBanco)->where('genero',$request->selectGenero)->get();
         }
 
-        $validacion=$request->all();
-        //return $validacion;
-        $hola=1;
         $nombre=$request->nombre;
         $paterno=$request->paterno;
         $materno=$request->materno;

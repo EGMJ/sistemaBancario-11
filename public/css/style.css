@@ -96,7 +96,7 @@ h1, h2, h3, h4, h5, h6, figure {
   width: 100%;
   padding: 20px 0;
   z-index: 1001;
-  background: #35d510;
+  background: #404E67;
   webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
@@ -231,7 +231,7 @@ h1, h2, h3, h4, h5, h6, figure {
   color: #fff;
 }
 
-///////////////////////////////////////////////////////////////////
+
 .ubea-nav ul li.active > a {
   color: #fff !important;
 }
@@ -1459,6 +1459,9 @@ form label {
     width: 100%;
     margin-bottom: 30px;
   }
+
+
+
 }
 #ubea-features-3 .feature h3 {
   color: #fff;

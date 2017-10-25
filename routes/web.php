@@ -34,10 +34,8 @@ Route::resource('cliente', 'ClienteController');
 Route::resource('sucursal', 'SucursalController');
 Route::resource('caja', 'CajaController');
 Route::resource('detalle', 'DetalleController');
-Route::resource('cuenta}', 'Cuenta}Controller');
 Route::resource('cuenta', 'CuentaController');
 Route::resource('cliente', 'ClienteController');
-Route::resource('cuentanga', 'cuentangaController');
 Route::resource('cuenta', 'CuentaController');
 Route::resource('cuenta', 'CuentaController');
 Route::resource('cuenta', 'CuentaController');
@@ -62,15 +60,15 @@ Route::resource('usuario-banco', 'UsuarioBancoController');
 Route::resource('rol-cu', 'RolCuController');
 Route::resource('banco-modulo', 'BancoModuloController');
 Route::resource('backup-restore', 'BackupRestoreController');
+Route::resource('bitacora', 'BitacoraController');
 Route::get('/pdf', 'PDFcontroller@pdf');
 
 
 //rutas Web Services Android
-Route::get('saldo/{correo}', 'ConsultasWSController@saldo');
 Route::get('login/{correo}', 'ConsultasWSController@login');
 Route::get('datos/{correo}', 'ConsultasWSController@datos');
 Route::get('historia/{correo}', 'ConsultasWSController@historia');
+Route::get('saldo/{correo}', 'ConsultasWSController@saldo');
 Route::get('transaccion/{banco}/{fecha}/{monto}/{cuentaO}/{cuentaD}', 'ConsultasWSController@transaccion');
-
 
 

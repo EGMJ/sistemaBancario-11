@@ -26,8 +26,7 @@ class ConsultasWSController extends Controller
         $datos = Cliente::_datos($correo);
         return json_encode(array("datos" => $datos));
     }
-
-     public function transaccion($idBanco,$fecha,$monto,$cuentaOrigen,$cuentaDestino)
+    public function transaccion($idBanco,$fecha,$monto,$cuentaOrigen,$cuentaDestino)
     {
         //$datos = Cliente::_transaccion($fecha,$monto,$cuentaOrigen,$cuentaDestino);
         //return json_encode(array("datos" => $datos));
@@ -40,15 +39,17 @@ class ConsultasWSController extends Controller
         ]);
     }
 
+
+
     public function historia($correo)
     {
         $datos = Cliente::_transacciones($correo);
         return json_encode(array("historia" => $datos));
     }
 
-public function saldo($correo)
+    public function saldo($correo)
     {
-        $datos = Cliente::_saldo($correo)->last();
+        $datos = Cliente::_saldo($correo);
         return json_encode(array("saldoactual" => $datos));
     }
 
