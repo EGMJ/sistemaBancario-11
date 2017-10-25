@@ -223,7 +223,7 @@
 
 
 
-          <li class=" nav-item"><a href="#"><i class="ft-zap"></i><span data-i18n="" class="menu-title">Persona</span></a>
+          <li class=" nav-item"><a href="#"><i class="fa fa-user"></i><span data-i18n="" class="menu-title">Persona</span></a>
             <ul class="menu-content">
               <li><a href={{url('/cliente')}}><i class="fa fa-ravelry"></i>Cliente</a>
               </li>
@@ -233,7 +233,7 @@
           </li>
 
 
-                <li class=" nav-item"><a href="#"><i class="ft-zap"></i><span data-i18n="" class="menu-title">Administar Cuenta</span></a>
+                <li class=" nav-item"><a href="#"><i class="fa fa-adjust"></i><span data-i18n="" class="menu-title">Administar Cuenta</span></a>
                     <ul class="menu-content">
                         <li><a href={{url('/cuenta')}}><i class="fa fa-ravelry"></i>Cuenta</a>
                         </li>
@@ -251,7 +251,7 @@
                 <li><a href={{url('/backup-restore')}}><i class="fa fa-database"></i>Copia & Restauracion</a></li>
 
 
-                <li class=" nav-item"><a href="#"><i class="fa fa-user"></i><span data-i18n="" class="menu-title">Roles & Permisos</span></a>
+                <li class=" nav-item"><a href="#"><i class="fa fa-group"></i><span data-i18n="" class="menu-title">Roles & Permisos</span></a>
                     <ul class="menu-content">
                         <li><a href={{url('/rol')}}><i class="fa fa-ravelry"></i>Roles</a>
                         </li>
@@ -269,6 +269,9 @@
                         </li>
                     </ul>
                 </li>
+
+                <li><a href={{url('/bitacora')}}><i class="fa fa-calendar"></i>Bitacora</a></li>
+
       </div>
     </div>
     <div class="content-body">
