@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Movimiento;
 use Illuminate\Http\Request;
 use Session;
+use Illuminate\Support\Facades\Auth;
 
 class MovimientoController extends Controller
 {
@@ -81,7 +82,7 @@ class MovimientoController extends Controller
 
 
 
-
+        BitacoraController::guardar('Movimiento->Movimiento guardado', Auth::user()->name, Auth::user()->id_banco);
 
 
         return redirect('movimiento');
