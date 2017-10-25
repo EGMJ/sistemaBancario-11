@@ -14,10 +14,10 @@ class Historico extends Model
     protected $table = 'historicos';
 
     /**
-    * The database primary key value.
-    *
-    * @var string
-    */
+     * The database primary key value.
+     *
+     * @var string
+     */
     protected $primaryKey = 'id';
 
     /**
@@ -26,6 +26,4 @@ class Historico extends Model
      * @var array
      */
     protected $fillable = ['fecha', 'id_cuenta', 'monto', 'saldo', 'detalle'];
-
-    
 }
