@@ -149,7 +149,7 @@ class CuentaController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     *
+     *ss
      * @param  int  $id
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
