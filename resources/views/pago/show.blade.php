@@ -1,11 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
-@section('content')
+@section('contenido')
     <div class="container">
         <div class="row">
-            @include('admin.sidebar')
 
-            <div class="col-md-9">
+        <div class="col-md-9">
                 <div class="panel panel-default">
                     <div class="panel-heading">Pago {{ $pago->id }}</div>
                     <div class="panel-body">

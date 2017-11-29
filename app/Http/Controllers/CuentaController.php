@@ -37,8 +37,7 @@ class CuentaController extends Controller
                     'cuentas.id as id',
                     DB::raw('concat(c.nombre," ",c.paterno," ",c.materno)as nombre'),
                     't.nombre as tipo',
-                    'saldo',
-                    'moneda'
+                    'saldo'
                 )->paginate($perPage);
         }
 
@@ -78,7 +77,6 @@ class CuentaController extends Controller
         $this->validate($request, [
 			'id_cliente' => 'required',
 			'saldo' => 'required',
-            'moneda' => 'required',
 			'id_banco' => 'required'
 		]);
 
@@ -136,7 +134,6 @@ class CuentaController extends Controller
         $this->validate($request, [
 			'id_cliente' => 'required',
 			'saldo' => 'required',
-            'moneda' => 'required',
 			'id_banco' => 'required',
 			'id_tipo' => 'required'
 		]);
@@ -152,7 +149,7 @@ class CuentaController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     *
+     *ss
      * @param  int  $id
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
