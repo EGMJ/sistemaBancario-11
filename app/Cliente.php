@@ -26,7 +26,7 @@ class Cliente extends Model
      *
      * @var array
      */
-    protected $fillable = ['nombre', 'paterno', 'materno', 'ci', 'fecha_nacimiento', 'genero', 'correo', 'telefono', 'id_banco'];
+    protected $fillable = ['tipo','nombre', 'paterno', 'materno', 'ci', 'fecha_nacimiento', 'genero', 'correo', 'telefono', 'id_banco'];
 
     public function scope_getClientesBanco($query ,$id_banco){
         $clientes=$query->where('id_banco',$id_banco)->select(

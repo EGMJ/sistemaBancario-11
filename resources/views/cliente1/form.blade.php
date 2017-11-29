@@ -1,10 +1,4 @@
-<div class="form-group {{ $errors->has('tipo') ? 'has-error' : ''}}">
-    {!! Form::label('tipo', 'Tipo', ['class' => 'col-md-4 control-label']) !!}
-    <div class="col-md-6">
-        {!! Form::select('tipo', ['PERSONA', 'EMPRESA'],null, ['class' => 'form-control', 'required' => 'required']) !!}
-        {!! $errors->first('tipo', '<p class="help-block">:message</p>') !!}
-    </div>
-</div><div class="form-group {{ $errors->has('nombre') ? 'has-error' : ''}}">
+<div class="form-group {{ $errors->has('nombre') ? 'has-error' : ''}}">
     {!! Form::label('nombre', 'Nombre', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
         {!! Form::text('nombre', null, ['class' => 'form-control', 'required' => 'required']) !!}
@@ -13,13 +7,13 @@
 </div><div class="form-group {{ $errors->has('paterno') ? 'has-error' : ''}}">
     {!! Form::label('paterno', 'Paterno', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::text('paterno', null, ['class' => 'form-control']) !!}
+        {!! Form::text('paterno', null, ['class' => 'form-control', 'required' => 'required']) !!}
         {!! $errors->first('paterno', '<p class="help-block">:message</p>') !!}
     </div>
 </div><div class="form-group {{ $errors->has('materno') ? 'has-error' : ''}}">
     {!! Form::label('materno', 'Materno', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::text('materno', null, ['class' => 'form-control']) !!}
+        {!! Form::text('materno', null, ['class' => 'form-control', 'required' => 'required']) !!}
         {!! $errors->first('materno', '<p class="help-block">:message</p>') !!}
     </div>
 </div><div class="form-group {{ $errors->has('ci') ? 'has-error' : ''}}">
@@ -37,7 +31,7 @@
 </div><div class="form-group {{ $errors->has('genero') ? 'has-error' : ''}}">
     {!! Form::label('genero', 'Genero', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::select('genero', ['MASCULINO', 'FEMENINO', 'NO DEFINIDO'], null, ['class' => 'form-control']) !!}
+        {!! Form::select('genero', ['MASCULINO', 'FEMENINO', 'NO DEFINIDO'], null, ['class' => 'form-control', 'required' => 'required']) !!}
         {!! $errors->first('genero', '<p class="help-block">:message</p>') !!}
     </div>
 </div><div class="form-group {{ $errors->has('correo') ? 'has-error' : ''}}">
@@ -52,12 +46,12 @@
         {!! Form::number('telefono', null, ['class' => 'form-control', 'required' => 'required']) !!}
         {!! $errors->first('telefono', '<p class="help-block">:message</p>') !!}
     </div>
-</div>{{--<div class="form-group {{ $errors->has('id_banco') ? 'has-error' : ''}}">
+</div><div class="form-group {{ $errors->has('id_banco') ? 'has-error' : ''}}">
     {!! Form::label('id_banco', 'Id Banco', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
         {!! Form::number('id_banco', null, ['class' => 'form-control', 'required' => 'required']) !!}
         {!! $errors->first('id_banco', '<p class="help-block">:message</p>') !!}
-    </div>--}}
+    </div>
 </div>
 
 <div class="form-group">

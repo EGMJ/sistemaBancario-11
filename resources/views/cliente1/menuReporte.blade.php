@@ -22,7 +22,7 @@
                             </ul>
                         @endif
                         <div class="panel-body">
-                            {!! Form::open(['route' => 'cliente.reporteStore','method' => 'POST']) !!}
+                            {!! Form::open(['route' => 'cliente1','method' => 'POST']) !!}
                             <table class="table table-borderless">
                                 <tr>
                                     <th>{!! Form::checkbox('nombre', true, true) !!} Nombre</th>

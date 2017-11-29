@@ -17,9 +17,9 @@
         {!! $errors->first('descripcion', '<p class="help-block">:message</p>') !!}
     </div>
 </div><div class="form-group {{ $errors->has('id_menu') ? 'has-error' : ''}}">
-    {!! Form::label('id_menu', 'Id Menu', ['class' => 'col-md-4 control-label']) !!}
+    {!! Form::label('id_menu', 'Funciones', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::text('id_menu', null, ['class' => 'form-control', 'required' => 'required']) !!}
+        {!! Form::select('id_menu',$menus, null, ['class' => 'form-control', 'required' => 'required']) !!}
         {!! $errors->first('id_menu', '<p class="help-block">:message</p>') !!}
     </div>
 </div>

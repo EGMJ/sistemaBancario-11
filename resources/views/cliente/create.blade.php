@@ -1,11 +1,10 @@
 @extends('layouts.admin')
 
 @section('contenido')
-<div class="container">
-    <div class="row">
+    <div class="container">
+        <div class="row">
 
-
-        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-12">
+            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">Create New Cliente</div>
                     <div class="panel-body">

@@ -225,7 +225,7 @@
 
           <li class=" nav-item"><a href="#"><i class="fa fa-user"></i><span data-i18n="" class="menu-title">Persona</span></a>
             <ul class="menu-content">
-              <li><a href={{url('/cliente')}}><i class="fa fa-ravelry"></i>Cliente</a>
+              <li><a href={{url('cliente')}}><i class="fa fa-ravelry"></i>Cliente</a>
               </li>
               <li><a href={{url('#')}}><i class="fa fa-ravelry"></i>Socio</a>
               </li>
@@ -256,7 +256,7 @@
                         <li><a href={{url('/rol')}}><i class="fa fa-ravelry"></i>Roles</a>
                         </li>
 
-                        <li><a href={{url('/caso-uso')}}><i class="fa fa-ravelry"></i>Permisos</a>
+                        <li><a href={{url('/rol-cu')}}><i class="fa fa-ravelry"></i>Permisos</a>
                         </li>
                     </ul>
                 </li>
@@ -266,6 +266,8 @@
                         <li><a href={{url('/modulo')}}><i class="fa fa-ravelry"></i>Modulos</a>
                         </li>
                         <li><a href={{url('/menu')}}><i class="fa fa-ravelry"></i>Funciones</a>
+                        </li>
+                        <li><a href={{url('/caso-uso')}}><i class="fa fa-ravelry"></i>Casos de Uso</a>
                         </li>
                     </ul>
                 </li>

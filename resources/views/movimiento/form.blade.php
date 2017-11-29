@@ -25,7 +25,7 @@
 </div><div class="form-group {{ $errors->has('id_cuenta') ? 'has-error' : ''}}">
     {!! Form::label('id_cuenta', 'Id Cuenta', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::number('id_cuenta', null, ['class' => 'form-control', 'required' => 'required']) !!}
+        {!! Form::select('id_cuenta', null, ['class' => 'form-control', 'required' => 'required']) !!}
         {!! $errors->first('id_cuenta', '<p class="help-block">:message</p>') !!}
     </div>
 </div>

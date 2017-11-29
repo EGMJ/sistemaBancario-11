@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Cliente;
 use App\Cuentum;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Movimiento;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Session;
 use Illuminate\Support\Facades\Auth;
 
@@ -48,8 +50,12 @@ class MovimientoController extends Controller
     }
     public function caja($id_caja)
     {
-
-        return view('movimiento.create1',compact('id_caja'));
+        $clientes=Cliente::where('id_banco',Auth::user()->id_banco)
+            ->select(
+                DB::raw('concat(nombre," ",paterno," ",materno)as nombre'),
+                'id'
+            )->get()->pluck('nombre','id');
+        return view('movimiento.create1',compact('id_caja','clientes'));
     }
     /**
      * Store a newly created resource in storage.

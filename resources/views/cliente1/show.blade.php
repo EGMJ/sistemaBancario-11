@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
-@section('content')
-    <div class="container">
-        <div class="row">
-            @include('admin.sidebar')
+@section('contenido')
+<div class="container">
+    <div class="row">
 
-            <div class="col-md-9">
+
+        <div class=""col-lg-11 col-md-11 col-sm-11 col-xs-12"">
                 <div class="panel panel-default">
                     <div class="panel-heading">Cliente {{ $cliente->id }}</div>
                     <div class="panel-body">
@@ -33,7 +33,7 @@
                                     <tr>
                                         <th>ID</th><td>{{ $cliente->id }}</td>
                                     </tr>
-                                    <tr><th> Tipo </th><td> {{ $cliente->tipo }} </td></tr><tr><th> Nombre </th><td> {{ $cliente->nombre }} </td></tr><tr><th> Paterno </th><td> {{ $cliente->paterno }} </td></tr>
+                                    <tr><th> Nombre </th><td> {{ $cliente->nombre }} </td></tr><tr><th> Paterno </th><td> {{ $cliente->paterno }} </td></tr><tr><th> Materno </th><td> {{ $cliente->materno }} </td></tr>
                                 </tbody>
                             </table>
                         </div>

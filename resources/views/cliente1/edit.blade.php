@@ -1,10 +1,11 @@
 @extends('layouts.admin')
 
 @section('contenido')
-    <div class="container">
-        <div class="row">
+<div class="container">
+    <div class="row">
 
-            <div class="col-md-9">
+
+        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">Edit Cliente #{{ $cliente->id }}</div>
                     <div class="panel-body">
@@ -27,7 +28,7 @@
                             'files' => true
                         ]) !!}
 
-                        @include ('cliente.form', ['submitButtonText' => 'Update'])
+                        @include ('cliente1.form', ['submitButtonText' => 'Update'])
 
                         {!! Form::close() !!}
 

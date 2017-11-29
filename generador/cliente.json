@@ -1,6 +1,10 @@
 {
   "fields": [
     {
+      "name": "tipo",
+      "type": "select",
+      "options": ["PERSONA", "EMPRESA"]
+    },{
       "name": "nombre",
       "type": "string"
     },
@@ -52,15 +56,10 @@
   ],
   "validations": [
     {
+      "field": "tipo",
+      "rules": "required"
+    },{
       "field": "nombre",
-      "rules": "required"
-    },
-      {
-      "field": "paterno",
-      "rules": "required"
-    },
-    {
-      "field": "materno",
       "rules": "required"
     },
     {
@@ -69,10 +68,6 @@
     },
     {
       "field": "fecha_nacimiento",
-      "rules": "required"
-    },
-      {
-      "field": "genero",
       "rules": "required"
     },
       {

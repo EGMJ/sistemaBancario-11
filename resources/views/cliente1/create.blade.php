@@ -1,12 +1,13 @@
 @extends('layouts.admin')
 
 @section('contenido')
-    <div class="container">
-        <div class="row">
+<div class="container">
+    <div class="row">
 
-            <div class="col-md-9">
+
+        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Edit Cliente #{{ $cliente->id }}</div>
+                    <div class="panel-heading">Create New Cliente</div>
                     <div class="panel-body">
                         <a href="{{ url('/cliente') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
                         <br />
@@ -20,14 +21,9 @@
                             </ul>
                         @endif
 
-                        {!! Form::model($cliente, [
-                            'method' => 'PATCH',
-                            'url' => ['/cliente', $cliente->id],
-                            'class' => 'form-horizontal',
-                            'files' => true
-                        ]) !!}
+                        {!! Form::open(['url' => '/cliente', 'class' => 'form-horizontal', 'files' => true]) !!}
 
-                        @include ('cliente.form', ['submitButtonText' => 'Update'])
+                        @include ('cliente1.form')
 
                         {!! Form::close() !!}
 

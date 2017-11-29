@@ -67,21 +67,30 @@ class ClienteController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-			'nombre' => 'required',
-			'paterno' => 'required',
-			'materno' => 'required',
+            'tipo' => 'required',
+            'nombre' => 'required',
 			'ci' => 'required',
 			'fecha_nacimiento' => 'required',
 			'genero' => 'required',
 			'correo' => 'required',
-			'telefono' => 'required',
-			'id_banco' => 'required'
+			'telefono' => 'required'
 		]);
-        $requestData = $request->all();
-        
-        Cliente::create($requestData);
 
-        Session::flash('flash_message', 'Cliente added!');
+
+        Cliente::create([
+            'tipo' => $request['tipo'],
+            'nombre' => $request['nombre'],
+            'paterno' => $request['paterno'],
+            'materno' => $request['materno'],
+            'ci' => $request['ci'],
+            'fecha_nacimiento' => $request['fecha_nacimiento'],
+            'genero' => $request['genero'],
+            'correo' => $request['correo'],
+            'telefono' => $request['telefono'],
+            'id_banco' => Auth::user()->id_banco
+        ]);
+
+        Session::flash('flash_message', 'Cliente adicionado!');
 
         BitacoraController::guardar('Cliente->Cliente guardado', Auth::user()->name, Auth::user()->id_banco);
 
@@ -102,7 +111,7 @@ class ClienteController extends Controller
         elseif ($request->selecBanco!=null and $request->selectGenero!=3){
             $clientes=Cliente::join('bancos as b','b.id','id_banco')->where('id_banco',$request->selecBanco)->where('genero',$request->selectGenero)->get();
         }
-
+        $tipo=$request->tipo;
         $nombre=$request->nombre;
         $paterno=$request->paterno;
         $materno=$request->materno;

@@ -129,7 +129,7 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{url('/cliente')}}"><i class="fa fa-circle-o"></i> CLIENTE</a></li>
+                    <li><a href="{{url('cliente1')}}"><i class="fa fa-circle-o"></i> CLIENTE</a></li>
                     <li><a href="{{url('#')}}"><i class="fa fa-circle-o"></i>  Socio</a></li>
                 </ul>
             </li>

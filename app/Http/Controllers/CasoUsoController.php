@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\CasoUso;
+use App\Menu;
 use Illuminate\Http\Request;
 use Session;
 
@@ -41,7 +42,8 @@ class CasoUsoController extends Controller
      */
     public function create()
     {
-        return view('caso-uso.create');
+        $menus= Menu::all()->pluck('nombre','id');
+        return view('caso-uso.create',compact('menus'));
     }
 
     /**
@@ -91,9 +93,10 @@ class CasoUsoController extends Controller
      */
     public function edit($id)
     {
+        $menus= Menu::all()->get()->pluck('nombre','id');
         $casouso = CasoUso::findOrFail($id);
 
-        return view('caso-uso.edit', compact('casouso'));
+        return view('caso-uso.edit', compact('casouso','menus'));
     }
 
     /**
