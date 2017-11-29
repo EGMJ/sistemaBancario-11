@@ -286,8 +286,6 @@
                         </li>
                         <li><a href={{url('/menu')}}><i class="fa fa-ravelry"></i>Funciones</a>
                         </li>
-                        <li><a href={{url('/caso-uso')}}><i class="fa fa-ravelry"></i>Casos de Uso</a>
-                        </li>
                     </ul>
                 </li>
                 <li><a href={{url('/backup-restore')}}><i class="fa fa-database"></i>Copia & Restauracion</a></li>

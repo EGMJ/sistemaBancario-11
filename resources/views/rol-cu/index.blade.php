@@ -29,14 +29,18 @@
                             <table class="table table-borderless">
                                 <thead>
                                     <tr>
-                                        <th>ID</th><th>Id Rol</th><th>Id Casouso</th><th>Actions</th>
+                                        <th>ID</th>
+                                        <th>Rol</th>
+                                        <th>Permiso</th>
+                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($rolcu as $item)
                                     <tr>
                                         <td>{{ $item->id }}</td>
-                                        <td>{{ $item->id_rol }}</td><td>{{ $item->id_casouso }}</td>
+                                        <td>{{ $item->rol }}</td>
+                                        <td>{{ $item->menu }}</td>
                                         <td>
                                             <a href="{{ url('/rol-cu/' . $item->id) }}" title="View RolCu"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ url('/rol-cu/' . $item->id . '/edit') }}" title="Edit RolCu"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>

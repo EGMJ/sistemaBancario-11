@@ -1,14 +1,20 @@
 <div class="form-group {{ $errors->has('id_rol') ? 'has-error' : ''}}">
-    {!! Form::label('id_rol', 'Id Rol', ['class' => 'col-md-4 control-label']) !!}
+    {!! Form::label('id_rol', 'Seleccione un Rol', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::number('id_rol', null, ['class' => 'form-control', 'required' => 'required']) !!}
+        @foreach($roles as $rol)
+            @php($opciones[$rol->rid] = $rol->rn)
+        @endforeach
+        {!! Form::select('id_rol', $opciones, null, ['class' => 'form-control', 'required' => 'required']) !!}
         {!! $errors->first('id_rol', '<p class="help-block">:message</p>') !!}
     </div>
 </div><div class="form-group {{ $errors->has('id_casouso') ? 'has-error' : ''}}">
-    {!! Form::label('id_casouso', 'Id Casouso', ['class' => 'col-md-4 control-label']) !!}
+    {!! Form::label('id_menu', 'Seleccione una funcionalidad', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::number('id_casouso', null, ['class' => 'form-control', 'required' => 'required']) !!}
-        {!! $errors->first('id_casouso', '<p class="help-block">:message</p>') !!}
+        @foreach($menus as $menu)
+            @php($opciones[$menu->mid] = $menu->mn)
+        @endforeach
+        {!! Form::select('id_menu', $opciones, null, ['class' => 'form-control', 'required' => 'required']) !!}
+        {!! $errors->first('id_menu', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
 

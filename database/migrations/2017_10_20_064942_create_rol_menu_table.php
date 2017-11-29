@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateCasoUsosTable extends Migration
+class CreateRolMenuTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,11 @@ class CreateCasoUsosTable extends Migration
      */
     public function up()
     {
-        Schema::create('caso_usos', function(Blueprint $table) {
+        Schema::create('rol_menu', function(Blueprint $table) {
             $table->increments('id');
-            $table->string('cod');
-            $table->string('nombre');
-            $table->string('descripcion');
+            $table->integer('id_rol')->unsigned();
             $table->integer('id_menu')->unsigned();
+            $table->foreign('id_rol')->references('id')->on('rols')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('id_menu')->references('id')->on('menus')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
@@ -30,6 +29,6 @@ class CreateCasoUsosTable extends Migration
      */
     public function down()
     {
-        Schema::drop('caso_usos');
+        Schema::drop('rol_menu');
     }
 }

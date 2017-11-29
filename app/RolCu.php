@@ -11,7 +11,7 @@ class RolCu extends Model
      *
      * @var string
      */
-    protected $table = 'rol_cus';
+    protected $table = 'rol_menu';
 
     /**
     * The database primary key value.
@@ -25,7 +25,7 @@ class RolCu extends Model
      *
      * @var array
      */
-    protected $fillable = ['id_rol', 'id_casouso'];
+    protected $fillable = ['id_rol', 'id_menu'];
 
     
 }
