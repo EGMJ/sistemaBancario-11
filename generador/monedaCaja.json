@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "monto",
+      "type": "double"
+    },
+    {
+      "name": "id_caja",
+      "type": "integer#unsigned"
+    },
+    {
+      "name": "id_moneda",
+      "type": "integer#unsigned"
+    }
+  ],
+  "foreign_keys": [
+    {
+      "column": "id_caja",
+      "references": "id",
+      "on": "cajas",
+      "onDelete": "cascade",
+      "onUpdate": "cascade"
+    },
+    {
+      "column": "id_moneda",
+      "references": "id",
+      "on": "monedas",
+      "onDelete": "cascade",
+      "onUpdate": "cascade"
+    }
+  ],
+  "validations": [
+    {
+      "field": "monto",
+      "rules": "required"
+    },
+    {
+      "field": "id_caja",
+      "rules": "required"
+    },
+    {
+      "field": "id_moneda",
+      "rules": "required"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "fields": [
+    {
+      "name": "interes",
+      "type": "double"
+    },
+    {
+      "name": "tiempo",
+      "type": "integer"
+    },
+    {
+      "name": "id_banco",
+      "type": "integer#unsigned"
+
+    }
+  ],
+
+  "validations": [
+    {
+      "field": "interes",
+      "rules": "required"
+    },
+    {
+      "field": "tiempo",
+      "rules": "required"
+    },
+    {
+      "field": "id_dpf",
+      "rules": "required"
+    },
+    {
+      "field": "id_banco",
+      "rules": "required"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "fields": [
+    {
+      "name": "monto",
+      "type": "double"
+    },
+    {
+      "name": "saldo",
+      "type": "double"
+    },
+    {
+      "name": "fechaPago",
+      "type": "date"
+    },
+    {
+      "name": "retraso",
+      "type": "integer"
+
+    },
+    {
+      "name": "id_credito",
+      "type": "integer#unsigned"
+
+    },
+    {
+      "name": "id_banco",
+      "type": "integer#unsigned"
+
+    }
+  ],
+  "foreign_keys": [
+    {
+      "column": "id_credito",
+      "references": "id",
+      "on": "creditos",
+      "onDelete": "cascade",
+      "onUpdate": "cascade"
+    }
+  ],
+
+  "validations": [
+    {
+      "field": "monto",
+      "rules": "required"
+    },
+    {
+      "field": "saldo",
+      "rules": "required"
+    },
+    {
+      "field": "retraso",
+      "rules": "required"
+    },
+    {
+      "field": "id_credito",
+      "rules": "required"
+    },
+    {
+      "field": "id_banco",
+      "rules": "required"
+    }
+  ]
+}

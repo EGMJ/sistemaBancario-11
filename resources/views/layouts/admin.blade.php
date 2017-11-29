@@ -246,9 +246,28 @@
                     </ul>
                 </li>
 
+                <li class=" nav-item"><a href="#"><i class="fa fa-plug"></i><span data-i18n="" class="menu-title">Creditos y DPFs</span></a>
+                    <ul class="menu-content">
+                        <li><a href={{url('/credito')}}><i class="fa fa-ravelry"></i>Credito</a>
+                        </li>
+                        <li><a href={{url('/pago')}}><i class="fa fa-ravelry"></i>Pagos</a>
+                        </li>
+                        <li><a href={{url('/dpf')}}><i class="fa fa-ravelry"></i>DPF</a>
+                        </li>
+                        <li><a href={{url('/tipo-dpf')}}><i class="fa fa-ravelry"></i>Gestionar Tipos de DPFs</a>
+                        </li>
+                    </ul>
+                </li>
 
+                <li class=" nav-item"><a href="#"><i class="fa fa-plug"></i><span data-i18n="" class="menu-title">Cajeros Automáticos</span></a>
+                    <ul class="menu-content">
+                        <li><a href={{url('/atm')}}><i class="fa fa-ravelry"></i>ATM</a>
+                        </li>
+                        <li><a href={{url('/#')}}><i class="fa fa-ravelry"></i>Tarjeta de Debito</a>
+                        </li>
+                    </ul>
+                </li>
 
-                <li><a href={{url('/backup-restore')}}><i class="fa fa-database"></i>Copia & Restauracion</a></li>
 
 
                 <li class=" nav-item"><a href="#"><i class="fa fa-group"></i><span data-i18n="" class="menu-title">Roles & Permisos</span></a>
@@ -271,6 +290,7 @@
                         </li>
                     </ul>
                 </li>
+                <li><a href={{url('/backup-restore')}}><i class="fa fa-database"></i>Copia & Restauracion</a></li>
 
                 <li><a href={{url('/bitacora')}}><i class="fa fa-calendar"></i>Bitacora</a></li>
 

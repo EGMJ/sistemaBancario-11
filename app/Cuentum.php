@@ -25,7 +25,7 @@ class Cuentum extends Model
      *
      * @var array
      */
-    protected $fillable = ['id_cliente', 'saldo','moneda', 'id_banco', 'id_tipo'];
+    protected $fillable = ['id_cliente', 'saldo', 'id_banco', 'id_tipo'];
 
     
 }

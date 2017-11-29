@@ -41,7 +41,7 @@
                         </div><div class="form-group {{ $errors->has('monto') ? 'has-error' : ''}}">
                             {!! Form::label('monto', 'Monto', ['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-6">
-                                {!! Form::number('monto', null, ['class' => 'form-control', 'required' => 'required']) !!}
+                                {!! Form::number('monto', null, ['class' => 'form-control', 'required' => 'required','step'=>'any']) !!}
                                 {!! $errors->first('monto', '<p class="help-block">:message</p>') !!}
                             </div>
                         </div><div class="form-group {{ $errors->has('tipo') ? 'has-error' : ''}}">

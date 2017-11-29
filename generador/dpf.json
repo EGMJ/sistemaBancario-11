@@ -1,0 +1,77 @@
+{
+  "fields": [
+    {
+      "name": "monto",
+      "type": "double"
+    },
+    {
+      "name": "fecha_inicio",
+      "type": "date"
+    },
+    {
+      "name": "fecha_final",
+      "type": "date"
+    },
+    {
+      "name": "id_cliente",
+      "type": "integer#unsigned"
+
+    },
+    {
+      "name": "id_tipoDpf",
+      "type": "integer#unsigned"
+
+    },
+    {
+      "name": "id_banco",
+      "type": "integer#unsigned"
+
+    }
+  ],
+  "foreign_keys": [
+    {
+      "column": "id_cliente",
+      "references": "id",
+      "on": "clientes",
+      "onDelete": "cascade",
+      "onUpdate": "cascade"
+    },{
+      "column": "id_tipoDpf",
+      "references": "id",
+      "on": "tipo_dpf",
+      "onDelete": "cascade",
+      "onUpdate": "cascade"
+    }
+  ],
+
+  "validations": [
+    {
+      "field": "monto",
+      "rules": "required"
+    },
+    {
+      "field": "fecha_inicio",
+      "rules": "required"
+    },
+    {
+      "field": "fecha_final",
+      "rules": "required"
+    },
+    {
+      "field": "fecha_final",
+      "rules": "required"
+    },
+    {
+      "field": "id_cliente",
+      "rules": "required"
+    },
+    {
+      "field": "id_tipoDpf",
+      "rules": "required"
+    },
+    {
+      "field": "id_banco",
+      "rules": "required"
+    }
+  ]
+}

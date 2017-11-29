@@ -2,7 +2,11 @@
   "fields": [
     {
       "name": "tipo",
-      "type": "string"
+      "type": "select"
+    },
+    {
+      "name": "nombre",
+      "type": "text"
     },
     {
       "name": "id_sucursal",

@@ -43,6 +43,7 @@ class ConsultasWSController extends Controller
 
     public function historia($correo)
     {
+       //return 'hola';
         $datos = Cliente::_transacciones($correo);
         return json_encode(array("historia" => $datos));
     }
@@ -52,6 +53,10 @@ class ConsultasWSController extends Controller
         $datos = Cliente::_saldo($correo);
         return json_encode(array("saldoactual" => $datos));
     }
-
+    public function mapa($correo)
+    {
+        $datos = Cliente::_mapa($correo);
+        return json_encode(array("mapas" => $datos));
+    }
 
 }

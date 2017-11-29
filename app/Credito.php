@@ -4,14 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TipoCuentum extends Model
+class Credito extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'tipo_cuentas';
+    protected $table = 'creditos';
 
     /**
     * The database primary key value.
@@ -25,13 +25,7 @@ class TipoCuentum extends Model
      *
      * @var array
      */
-    protected $fillable = ['nombre', 'interes','id_moneda', 'id_banco'];
+    protected $fillable = ['monto', 'plaso', 'interes', 'monto_pagado', 'saldo', 'id_cuenta', 'id_banco'];
 
-    public function scope_getTipoCuentas($query ,$id_banco){
-        $tipocuenta=$query->where('id_banco',$id_banco)->select(
-            'id','nombre'
-
-        );
-        return $tipocuenta;
-    }
+    
 }

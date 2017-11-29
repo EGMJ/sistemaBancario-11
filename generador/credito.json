@@ -1,0 +1,76 @@
+{
+  "fields": [
+    {
+      "name": "monto",
+      "type": "double"
+    },
+    {
+      "name": "plaso",
+      "type": "integer"
+    },
+   {
+      "name": "interes",
+      "type": "double"
+    },
+    {
+      "name": "monto_pagado",
+      "type": "double"
+    },
+    {
+      "name": "saldo",
+      "type": "double"
+    },
+    {
+      "name": "id_cuenta",
+      "type": "integer#unsigned"
+
+    },
+    {
+      "name": "id_banco",
+      "type": "integer#unsigned"
+
+    }
+  ],
+  "foreign_keys": [
+    {
+      "column": "id_banco",
+      "references": "id",
+      "on": "bancos",
+      "onDelete": "cascade",
+      "onUpdate": "cascade"
+    },
+    {
+      "column": "id_cuenta",
+      "references": "id",
+      "on": "cuentas",
+      "onDelete": "cascade",
+      "onUpdate": "cascade"
+    }
+  ],
+  "validations": [
+    {
+      "field": "monto",
+      "rules": "required"
+    },
+    {
+      "field": "plaso",
+      "rules": "required"
+    },
+    {
+      "field": "interes",
+      "rules": "required"
+    },
+    {
+      "field": "monto_pagado",
+      "rules": "required"
+    },
+    {
+      "field": "saldo",
+      "rules": "required"
+    },
+    {
+      "field": "id_banco",
+      "rules": "required"
+    }
+  ]
+}

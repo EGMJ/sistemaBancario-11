@@ -1,0 +1,62 @@
+{
+  "fields": [
+    {
+      "name": "nit",
+      "type": "integer"
+    },
+    {
+      "name": "razonSocial",
+      "type": "string"
+    },
+    {
+      "name": "rubro",
+      "type": "number"
+    },
+    {
+      "name": "telefono",
+      "type": "integer"
+    },
+    {
+      "name": "direccion",
+      "type": "string"
+    },
+    {
+      "name": "id_banco",
+      "type": "integer#unsigned"
+
+    }
+  ],
+  "foreign_keys": [
+    {
+      "column": "id_banco",
+      "references": "id",
+      "on": "bancos",
+      "onDelete": "cascade",
+      "onUpdate": "cascade"
+    }
+  ],
+  "validations": [
+    {
+      "field": "nit",
+      "rules": "required"
+    },{
+      "field": "razonSocial",
+      "rules": "required"
+    },
+    {
+      "field": "rubro",
+      "rules": "required"
+    },
+    {
+      "field": "telefono",
+      "rules": "required"
+    },{
+      "field": "direccion",
+      "rules": "required"
+    },
+    {
+      "field": "id_banco",
+      "rules": "required"
+    }
+  ]
+}

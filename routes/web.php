@@ -72,5 +72,14 @@ Route::get('datos/{correo}', 'ConsultasWSController@datos');
 Route::get('historia/{correo}', 'ConsultasWSController@historia');
 Route::get('saldo/{correo}', 'ConsultasWSController@saldo');
 Route::get('transaccion/{banco}/{fecha}/{monto}/{cuentaO}/{cuentaD}', 'ConsultasWSController@transaccion');
+Route::get('mapa/{correo}', 'ConsultasWSController@mapa');
 
 
+Route::resource('atm', 'AtmController');
+Route::resource('atm', 'AtmController');
+Route::resource('credito', 'CreditoController');
+Route::resource('pago', 'PagoController');
+Route::resource('dpf', 'DpfController');
+Route::resource('tipo-dpf', 'TipoDpfController');
+Route::resource('dpf', 'DpfController');
+Route::resource('tipo-dpf', 'TipoDpfController');

@@ -4,7 +4,7 @@
         {!! Form::select('tipo', ['PERSONA', 'EMPRESA'],null, ['class' => 'form-control', 'required' => 'required']) !!}
         {!! $errors->first('tipo', '<p class="help-block">:message</p>') !!}
     </div>
-</div><div class="form-group {{ $errors->has('nombre') ? 'has-error' : ''}}">
+</div><br><div class="form-group {{ $errors->has('nombre') ? 'has-error' : ''}}">
     {!! Form::label('nombre', 'Nombre', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
         {!! Form::text('nombre', null, ['class' => 'form-control', 'required' => 'required']) !!}

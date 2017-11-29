@@ -11,6 +11,19 @@
     {
       "name": "abreviatura",
       "type": "string"
+    },
+    {
+      "name": "id_monedaCaja",
+      "type": "integer#unsigned"
+    }
+  ],
+  "foreign_keys": [
+    {
+      "column": "id_monedaCaja",
+      "references": "id",
+      "on": "moneda_cajas",
+      "onDelete": "cascade",
+      "onUpdate": "cascade"
     }
   ],
   "validations": [
@@ -24,6 +37,10 @@
     },
     {
       "field": "abreviatura",
+      "rules": "required"
+    },
+    {
+      "field": "id_monedaCaja",
       "rules": "required"
     }
   ]

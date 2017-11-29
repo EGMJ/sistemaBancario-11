@@ -1,0 +1,43 @@
+{
+  "fields": [
+    {
+      "name": "Ubicacion",
+      "type": "string"
+    },
+    {
+      "name": "x",
+      "type": "float"
+    },
+    {
+      "name": "y",
+      "type": "float"
+    },
+    {
+      "name": "id_banco",
+      "type": "integer#unsigned"
+    }
+  ],
+  "foreign_keys": [
+    {
+      "column": "id_banco",
+      "references": "id",
+      "on": "bancos",
+      "onDelete": "cascade",
+       "onUpdate": "cascade"
+    }
+  ],
+  "validations": [
+    {
+      "field": "ubicacion",
+      "rules": "required"
+    },
+    {
+      "field": "x",
+      "rules": "required"
+    },
+    {
+      "field": "y",
+      "rules": "required"
+    }
+  ]
+}
