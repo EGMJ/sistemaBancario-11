@@ -41,8 +41,9 @@ class ConsultasWSController extends Controller
                 'id_cuenta_destino' => $cuentaDestino,
                 'id_cuenta' => $cuentaOrigen
             ]);
+            return json_encode(array("resultado" => 0));
         }else{
-
+            return json_encode(array("resultado" => $saldo));
         }
 
 
@@ -57,15 +58,17 @@ class ConsultasWSController extends Controller
         return json_encode(array("historia" => $datos));
     }
 
-    public function saldo($correo)
-    {
-        $datos = Cliente::_saldo($correo);
-        return json_encode(array("saldoactual" => $datos));
-    }
     public function mapa($correo)
     {
         $datos = Cliente::_mapa($correo);
         return json_encode(array("mapas" => $datos));
     }
+
+    public function saldo($correo)
+    {
+        $datos = Cliente::_saldo($correo);
+        return json_encode(array("saldoactual" => $datos));
+    }
+
 
 }
