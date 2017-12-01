@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Banco;
+use App\Cliente;
 use App\Cuentum;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Transaccion;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Session;
 
@@ -43,7 +46,8 @@ class TransaccionController extends Controller
      */
     public function create()
     {
-        return view('transaccion.create');
+        $bancos = Banco::all()->pluck('razon_social','id');
+        return view('transaccion.create',compact('bancos'));
     }
 
     /**
@@ -70,6 +74,13 @@ class TransaccionController extends Controller
             $requestData = $request->all();
 
             Transaccion::create($requestData);
+            $cliente= Cliente::join('cuentas as c','c.id_cliente','clientes.id')
+                ->where('c.id',$request['id_cuenta'])->first();
+            $cliente1= Cliente::join('cuentas as c','c.id_cliente','clientes.id')
+                ->where('c.id',$request['id_cuenta_destino'])->first();
+            $pdf = \PDF::loadview('transaccion.pdfTransaccion',compact('cliente','cliente1','request'));
+            return $pdf->stream('movimiento '.Carbon::now().'.pdf');
+
             Session::flash('message', 'Movimiento realizado exitosamente!');
         }else{
             Session::flash('error', 'Movimiento Abortado: Saldo insuficiente!');

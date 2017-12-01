@@ -8,10 +8,12 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Movimiento;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Session;
 use Illuminate\Support\Facades\Auth;
+use Symfony\Component\HttpKernel\Client;
 
 class MovimientoController extends Controller
 {
@@ -80,6 +82,11 @@ class MovimientoController extends Controller
         if(($request['tipo']=="RETIRO" AND $saldo>=$request['monto'] )or($request['tipo']=="DEPOSITO") ){
             $requestData = $request->all();
             Movimiento::create($requestData);
+
+            $cliente= Cliente::join('cuentas as c','c.id_cliente','clientes.id')
+                ->where('c.id',$request['id_cuenta'])->first();
+            $pdf = \PDF::loadview('movimiento.pdfMovimiento',compact('cliente','request'));
+            return $pdf->stream('movimiento '.Carbon::now().'.pdf');
             Session::flash('message', 'Movimiento realizado exitosamente!');
         }else{
             Session::flash('error', 'Movimiento Abortado: Saldo insuficiente!');

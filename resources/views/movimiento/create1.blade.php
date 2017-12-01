@@ -8,7 +8,7 @@
     <div class="row">
 
 
-        <div class=""col-lg-11 col-md-11 col-sm-11 col-xs-12"">
+        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">Create New Movimiento</div>
                     <div class="panel-body">
@@ -51,10 +51,10 @@
                                 {!! $errors->first('tipo', '<p class="help-block">:message</p>') !!}
                             </div>
 
-                        </div> <div class="form-group {{ $errors->has('id_banco') ? 'has-error' : ''}}">
+                        </div> <div class="form-group {{ $errors->has('id_banco') ? 'has-error' : ''}}" hidden="hidden">
                             {!! Form::label('id_banco', 'Id Banco', ['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-6">
-                                {!! Form::number('id_banco', null, ['class' => 'form-control', 'required' => 'required']) !!}
+                                {!! Form::number('id_banco', \Illuminate\Support\Facades\Auth::user()->id_banco, ['class' => 'form-control', 'required' => 'required']) !!}
                                 {!! $errors->first('id_banco', '<p class="help-block">:message</p>') !!}
                             </div>
                         </div><div class="form-group {{ $errors->has('id_cuenta') ? 'has-error' : ''}}">
