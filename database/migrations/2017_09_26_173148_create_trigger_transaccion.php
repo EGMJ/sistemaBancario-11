@@ -13,6 +13,7 @@ class CreateTriggerTransaccion extends Migration
      */
     public function up()
     {
+        /*
         DB::unprepared('
 
         CREATE TRIGGER tr_transaccion AFTER insert ON transaccions
@@ -29,6 +30,7 @@ class CreateTriggerTransaccion extends Migration
         END
 
         ');
+        */
     }
 
     /**

@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 
 use App\RolCu;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Session;
 
 class RolCuController extends Controller
@@ -22,11 +23,20 @@ class RolCuController extends Controller
         $perPage = 25;
 
         if (!empty($keyword)) {
-            $rolcu = RolCu::where('id_rol', 'LIKE', "%$keyword%")
-				->orWhere('id_casouso', 'LIKE', "%$keyword%")
-				->paginate($perPage);
+            $rolcu = DB::table('rol_menu as rm')
+                ->join('rols as r', 'rm.id_rol', 'r.id')
+                ->join('menus as m', 'rm.id_menu', 'm.id')
+                ->where('r.nombre', 'LIKE', "%$keyword%")
+                ->orWhere('m.nombre', 'LIKE', "%$keyword%")
+                ->select('rm.id as id', 'r.nombre as rol', 'm.nombre as menu')
+                ->paginate($perPage);
+
         } else {
-            $rolcu = RolCu::paginate($perPage);
+            $rolcu = DB::table('rol_menu as rm')
+                ->join('rols as r', 'rm.id_rol', 'r.id')
+                ->join('menus as m', 'rm.id_menu', 'm.id')
+                ->select('rm.id as id', 'r.nombre as rol', 'm.nombre as menu')
+                ->paginate($perPage);
         }
 
         return view('rol-cu.index', compact('rolcu'));
@@ -39,7 +49,14 @@ class RolCuController extends Controller
      */
     public function create()
     {
-        return view('rol-cu.create');
+        $roles = DB::table('rols as r')
+            ->select('r.id as rid', 'r.nombre as rn')
+            ->get();
+
+        $menus = DB::table('menus as m')
+            ->select('m.id as mid', 'm.nombre as mn')
+            ->get();
+        return view('rol-cu.create')->with('roles', $roles)->with('menus', $menus);
     }
 
     /**
@@ -53,7 +70,7 @@ class RolCuController extends Controller
     {
         $this->validate($request, [
 			'id_rol' => 'required',
-			'id_casouso' => 'required'
+			'id_menu' => 'required'
 		]);
         $requestData = $request->all();
         
@@ -104,7 +121,7 @@ class RolCuController extends Controller
     {
         $this->validate($request, [
 			'id_rol' => 'required',
-			'id_casouso' => 'required'
+			'id_menu' => 'required'
 		]);
         $requestData = $request->all();
         

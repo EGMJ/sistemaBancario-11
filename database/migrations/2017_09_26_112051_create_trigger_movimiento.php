@@ -13,6 +13,7 @@ class CreateTriggerMovimiento extends Migration
      */
     public function up()
     {
+        /*
         DB::unprepared('
 
         CREATE TRIGGER tr_movimiento AFTER insert ON movimientos
@@ -40,7 +41,7 @@ class CreateTriggerMovimiento extends Migration
                 
         END
 
-        ');
+        ');*/
     }
 
     /**
