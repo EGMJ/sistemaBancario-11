@@ -47,7 +47,7 @@
 
             <th class="th-and" style="background-color: #0000cc; color: white" >Nro. de Cuenta Origen</th>
 
-            <td class="th-and">{{$request->id_cuenta}}</td>
+            <td class="th-and">{{$request['id_cuenta']}}</td>
 
         </tr>
         <tr >
@@ -61,7 +61,7 @@
 
             <th class="th-and" style="background-color: #0000cc; color: white" >Nro. de Cuenta Destino</th>
 
-            <td class="th-and">{{$request->id_cuenta_destino}}</td>
+            <td class="th-and">{{$request['id_cuenta_destino']}}</td>
 
         </tr>
         <tr >
@@ -75,14 +75,14 @@
 
             <th class="th-and" style="background-color: #0000cc; color: white" >Fecha</th>
 
-            <td class="th-and">{{$request->fecha}}</td>
+            <td class="th-and">{{$request['fecha']}}</td>
 
         </tr>
         <tr style="background: #CCCCCC">
 
             <th class="th-and" style="background-color: #0000cc; color: white" >Monto</th>
 
-            <td class="th-and">{{$request->monto}} Bs.</td>
+            <td class="th-and">{{$request['monto']}} Bs.</td>
 
         </tr>
 
