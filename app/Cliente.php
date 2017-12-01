@@ -31,7 +31,7 @@ class Cliente extends Model
     public function scope_getClientesBanco($query ,$id_banco){
        // where('id_banco',$id_banco)->
         $clientes=$query->select(
-            'id',DB::raw('concat(nombre," ",paterno," ",materno)as nombre ')
+            'id',DB::raw('concat(nombre," ",ifnull(paterno,"")," ",ifnull(materno,""))as nombre ')
 
         );
         return $clientes;

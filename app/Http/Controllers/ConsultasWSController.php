@@ -43,7 +43,13 @@ class ConsultasWSController extends Controller
                 'id_cuenta_destino' => $cuentaDestino,
                 'id_cuenta' => $cuentaOrigen
             ]);
-            return json_encode(array("resultado" => 0));
+            $cliente= Cliente::join('cuentas as c','c.id_cliente','clientes.id')
+                ->where('c.id',$cuentaOrigen)->first();
+            $cliente1= Cliente::join('cuentas as c','c.id_cliente','clientes.id')
+                ->where('c.id',$cuentaDestino)->first();
+            $pdf = \PDF::loadview('transaccion.pdfTransaccion',compact('cliente','cliente1','request'));
+            return $pdf->stream('movimiento '.Carbon::now().'.pdf');
+           // return json_encode(array("resultado" => 0));
         } else {
             return json_encode(array("resultado" => $saldo));
         }

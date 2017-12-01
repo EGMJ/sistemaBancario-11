@@ -1,7 +1,7 @@
 <div class="form-group {{ $errors->has('tipo') ? 'has-error' : ''}}">
     {!! Form::label('tipo', 'Tipo', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::select('tipo', ['PERSONA', 'EMPRESA'],null, ['class' => 'form-control', 'required' => 'required']) !!}
+        {!! Form::select('tipo', ['PERSONA'=>'PERSONA', 'EMPRESA'=>'EMPRESA'],null, ['class' => 'form-control', 'required' => 'required']) !!}
         {!! $errors->first('tipo', '<p class="help-block">:message</p>') !!}
     </div>
 </div><br><div class="form-group {{ $errors->has('nombre') ? 'has-error' : ''}}">

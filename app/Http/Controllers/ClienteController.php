@@ -166,11 +166,8 @@ class ClienteController extends Controller
     {
         $this->validate($request, [
 			'nombre' => 'required',
-			'paterno' => 'required',
-			'materno' => 'required',
 			'ci' => 'required',
 			'fecha_nacimiento' => 'required',
-			'genero' => 'required',
 			'correo' => 'required',
 			'telefono' => 'required',
 

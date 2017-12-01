@@ -90,6 +90,9 @@
                     <br>
                     <br>
             Fecha de Impresion {{\Carbon\Carbon::now()}}
+        <br>
+        <br>
+        Este comprobante es de uso particular.
     </table>
 </div>
 </body></html>
