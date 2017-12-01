@@ -68,6 +68,7 @@ Route::get('/excel', 'ExcelCntroller@excel');
 
 //rutas Web Services Android
 Route::get('login/{correo}', 'ConsultasWSController@login');
+Route::get('bancos', 'ConsultasWSController@bancos');
 Route::get('datos/{correo}', 'ConsultasWSController@datos');
 Route::get('historia/{correo}', 'ConsultasWSController@historia');
 Route::get('saldo/{correo}', 'ConsultasWSController@saldo');
