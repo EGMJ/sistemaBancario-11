@@ -198,8 +198,6 @@
             <ul class="menu-content">
                 <li><a href={{url('/banco')}}><i class="fa fa-ravelry"></i>Banco</a>
                 </li>
-                <li><a href={{url('#')}}><i class="fa fa-ravelry"></i>Crear Cuenta</a>
-                </li>
                 <li><a href={{url('#')}}><i class="fa fa-ravelry"></i>Cuenta Administrativa</a>
                 </li>
 

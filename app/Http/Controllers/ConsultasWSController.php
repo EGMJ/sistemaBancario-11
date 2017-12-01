@@ -73,8 +73,8 @@ class ConsultasWSController extends Controller
 
     public function bancos()
     {
-        $datos = Banco::query()->select()->all();
-        return json_encode(array("bancos" => $datos));
+        $datos1 = Banco::all();
+        return json_encode(array("bancos" => $datos1));
     }
 
 

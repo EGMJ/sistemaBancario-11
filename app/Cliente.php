@@ -29,7 +29,8 @@ class Cliente extends Model
     protected $fillable = ['tipo','nombre', 'paterno', 'materno', 'ci', 'fecha_nacimiento', 'genero', 'correo', 'telefono', 'id_banco'];
 
     public function scope_getClientesBanco($query ,$id_banco){
-        $clientes=$query->where('id_banco',$id_banco)->select(
+       // where('id_banco',$id_banco)->
+        $clientes=$query->select(
             'id',DB::raw('concat(nombre," ",paterno," ",materno)as nombre ')
 
         );

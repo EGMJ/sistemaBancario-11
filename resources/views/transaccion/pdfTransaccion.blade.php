@@ -21,7 +21,7 @@
             padding:5px;
         }
     </style>
-</head><body class="centrar">
+</head><body class="centrar" style="justify-content: center">
 
 <table class="table-and">
     <tr >

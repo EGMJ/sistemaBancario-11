@@ -53,8 +53,9 @@
                                                         'onclick'=>'return confirm("Confirm delete?")'
                                                 )) !!}
                                             {!! Form::close() !!}
-                                            <a href="{{ url('/movimiento/caja/' . $item->id) }}" title="Registrar Movimiento"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> Movimiento</button></a>
-                                            <a href="{{ url('/caja/detalle/' . $item->id) }}" title="Ver Historico"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> Ver Historico</button></a>
+                                            <a href="{{ url('/movimiento/caja/' . $item->id) }}" title="Registrar Movimiento"><button class="btn btn-info btn-xs"><i class="fa fa-dollar" aria-hidden="true"></i> Movimiento</button></a>
+                                            <a href="{{ url('/transaccion/create/') }}" title="Ver Historico"><button class="btn btn-alert btn-xs"><i class="fa fa-money" aria-hidden="true"></i> Transacciones</button></a>
+                                            <a href="{{ url('/caja/detalle/' . $item->id) }}" title="Ver Historico"><button class="btn btn-info btn-xs"><i class="fa fa-clone" aria-hidden="true"></i> Ver Historico</button></a>
 
                                         </td>
                                     </tr>

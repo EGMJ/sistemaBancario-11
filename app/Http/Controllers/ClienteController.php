@@ -173,7 +173,7 @@ class ClienteController extends Controller
 			'genero' => 'required',
 			'correo' => 'required',
 			'telefono' => 'required',
-			'id_banco' => 'required'
+
 		]);
         $requestData = $request->all();
         
