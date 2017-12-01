@@ -30,13 +30,22 @@ class ConsultasWSController extends Controller
     {
         //$datos = Cliente::_transaccion($fecha,$monto,$cuentaOrigen,$cuentaDestino);
         //return json_encode(array("datos" => $datos));
-        Transaccion::create([
-            'fecha' => $fecha,
-            'monto' => $monto,
-            'id_banco' => $idBanco,
-            'id_cuenta_destino' => $cuentaDestino,
-            'id_cuenta' => $cuentaOrigen
-        ]);
+        $saldo=Cuentum::where('id',$cuentaOrigen)->get()->first()->saldo;
+
+
+        if($saldo>=$monto){
+            Transaccion::create([
+                'fecha' => $fecha,
+                'monto' => $monto,
+                'id_banco' => $idBanco,
+                'id_cuenta_destino' => $cuentaDestino,
+                'id_cuenta' => $cuentaOrigen
+            ]);
+        }else{
+
+        }
+
+
     }
 
 
