@@ -44,7 +44,7 @@ class ConsultasWSController extends Controller
                 'id_cuenta_destino' => $cuentaDestino,
                 'id_cuenta' => $cuentaOrigen
             ]);
-            $request=['fecha'=>$fecha,'monto'=>$monto];
+            $request=['fecha'=>$fecha,'monto'=>$monto,'id_cuenta'=>$cuentaOrigen,'id_cuenta_destino'=>$cuentaDestino];
             $cliente= Cliente::join('cuentas as c','c.id_cliente','clientes.id')
                 ->where('c.id',$cuentaOrigen)->first();
             $cliente1= Cliente::join('cuentas as c','c.id_cliente','clientes.id')
