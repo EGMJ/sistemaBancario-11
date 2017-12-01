@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Banco;
 use App\Cuentum;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -26,14 +27,15 @@ class ConsultasWSController extends Controller
         $datos = Cliente::_datos($correo);
         return json_encode(array("datos" => $datos));
     }
-    public function transaccion($idBanco,$fecha,$monto,$cuentaOrigen,$cuentaDestino)
+
+    public function transaccion($idBanco, $fecha, $monto, $cuentaOrigen, $cuentaDestino)
     {
         //$datos = Cliente::_transaccion($fecha,$monto,$cuentaOrigen,$cuentaDestino);
         //return json_encode(array("datos" => $datos));
-        $saldo=Cuentum::where('id',$cuentaOrigen)->get()->first()->saldo;
+        $saldo = Cuentum::where('id', $cuentaOrigen)->get()->first()->saldo;
 
 
-        if($saldo>=$monto){
+        if ($saldo >= $monto) {
             Transaccion::create([
                 'fecha' => $fecha,
                 'monto' => $monto,
@@ -41,20 +43,26 @@ class ConsultasWSController extends Controller
                 'id_cuenta_destino' => $cuentaDestino,
                 'id_cuenta' => $cuentaOrigen
             ]);
-        }else{
-
+            return json_encode(array("resultado" => 0));
+        } else {
+            return json_encode(array("resultado" => $saldo));
         }
 
 
     }
 
 
-
     public function historia($correo)
     {
-       //return 'hola';
+        //return 'hola';
         $datos = Cliente::_transacciones($correo);
         return json_encode(array("historia" => $datos));
+    }
+
+    public function mapa($correo)
+    {
+        $datos = Cliente::_mapa($correo);
+        return json_encode(array("mapas" => $datos));
     }
 
     public function saldo($correo)
@@ -62,10 +70,12 @@ class ConsultasWSController extends Controller
         $datos = Cliente::_saldo($correo);
         return json_encode(array("saldoactual" => $datos));
     }
-    public function mapa($correo)
+
+    public function bancos()
     {
-        $datos = Cliente::_mapa($correo);
-        return json_encode(array("mapas" => $datos));
+        $datos = Banco::query()->select()->all();
+        return json_encode(array("bancos" => $datos));
     }
+
 
 }
